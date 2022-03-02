@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+:root {
+  --blue-color: hsl(220, 98%, 61%);
+  --linear-color: hsl(192, 100%, 67%);
+  --linear-color2: hsl(280, 87%, 65%);
+  /* Light Theme */
+  --very-gray: hsl(0, 0%, 98%);
+  --very-grayish: hsl(236, 33%, 92%);
+  --grayish: hsl(233, 11%, 84%);
+  --dark-grayish: hsl(236, 9%, 61%);
+  --very-dark-grayish: hsl(235, 19%, 35%);
+  /* Dark Theme */
+  --dark: hsl(235, 21%, 11%);
+  --dark-desaturated: hsl(235, 24%, 19%);
+  --grayish: hsl(234, 39%, 85%);
+  --grayish-hover: hsl(236, 33%, 92%);
+  --dark-grayish: hsl(234, 11%, 52%);
+  --very-dark-grayish: hsl(233, 14%, 35%);
+  --very-dark-grayish2: hsl(237, 14%, 26%);
+}
+
+body {
+  font-size: 18px;
+  background: var(--dark);
+}
+
+body.light {
+  background: var(--very-gray);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+ul {
+  list-style: none;
+}
+
+.todo-img {
+  width: 100%;
+  height: 300px;
+  background: url(./images/bg-desktop-dark.jpg);
+  background-size: cover;
+}
+
+body.light .todo-img {
+  background: url(./images/bg-desktop-light.jpg);
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main.todo {
+  position: absolute;
+  top: 0;
+  width: 540px;
+  margin: 0 auto;
+  padding-top: 75px;
+}
+
+.todo__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.todo__header h1 {
+  font-size: 41px;
+  font-weight: 700;
+  color: var(--very-gray);
+  letter-spacing: 5.44px;
+}
+
+.todo__header .todo__btn {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background: url(./images/icon-sun.svg);
+  background-size: cover;
+}
+
+body.light .todo__header .todo__btn {
+  background: url(./images/icon-moon.svg);
+  background-repeat: no-repeat;
+}
+
+.todo__form {
+  width: 100%;
+  border-radius: 5px;
+  padding: 25px;
+  background: var(--dark-desaturated);
+  display: flex;
+  align-items: center;
+}
+
+body.light .todo__form {
+  background: var(--very-gray);
+}
+
+.todo__form--check {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--dark-grayish);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+#txtInput {
+  outline: none;
+  border: none;
+  background: transparent;
+  color: var(--dark-grayish);
+  caret-color: var(--blue-color);
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  padding-left: 15px;
+}
+
+#txtInput:focus {
+  color: var(--grayish);
+}
+
+body.light #txtInput {
+  color: var(--dark-grayish);
+}
+
+body.light #txtInput:focus {
+  color: var(--very-dark-grayish);
+}
+
+.todo__body {
+  width: 100%;
+  background: var(--dark-desaturated);
+  box-shadow: 1px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.light .todo__body {
+  background: var(--very-gray);
+  box-shadow: 1px 10px 30px var(--very-grayish);
+}
+
+.todo__body {
+  margin-top: 25px;
+  border-radius: 5px;
+}
+
+.todo__body--foot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 25px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 25px;
+  width: 100%;
+  color: var(--grayish);
+  background: var(--dark-desaturated);
+  border-bottom: 1px solid var(--very-dark-grayish);
+}
+
+body.light .list-item {
+  color: var(--very-dark-grayish);
+  background: var(--very-gray);
+  border-bottom-color: var(--grayish);
+}
+
+.list-item .item-check {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--dark-grayish);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.item-check.active {
+  background: url(./images/icon-check.svg) no-repeat center,
+    linear-gradient(to bottom right, var(--linear-color), var(--linear-color2));
+  border: none;
+}
+
+.list-item .item-check.active:hover {
+  background: url(./images/icon-check.svg) no-repeat center,
+    linear-gradient(to bottom right, var(--linear-color), var(--linear-color2));
+  border: none;
+}
+
+.list-item .item-check:hover {
+  background: linear-gradient(var(--dark-desaturated), var(--dark-desaturated))
+      padding-box,
+    linear-gradient(to bottom right, var(--linear-color), var(--linear-color2))
+      border-box;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.list-item p {
+  flex: 1;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.list-item p.del {
+  -webkit-text-decoration-line: line-through;
+  text-decoration-line: line-through;
+  color: var(--very-dark-grayish);
+}
+
+body.light .list-item p.del {
+  color: var(--grayish);
+}
+
+.list-item .item-delete {
+  width: 20px;
+  height: 20px;
+  background: url(./images/icon-cross.svg);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.todo__body--foot {
+  color: var(--dark-grayish);
+}
+
+body.light .todo__body--foot {
+  color: hsl(236, 9%, 61%);
+}
+
+.foot__center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.foot__center p {
+  font-weight: 700;
+}
+
+.foot__center p.active {
+  color: var(--blue-color);
+}
+
+.foot__center p:hover {
+  cursor: pointer;
+}
+
+.foot__right span:hover {
+  cursor: pointer;
+}
+
+footer p {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--very-dark-grayish);
+}
+
+body.light footer p {
+  color: var(--dark-grayish);
+}
+
+@media screen and (max-width: 768px) {
+  main.todo {
+    max-width: 500px;
+  }
+
+  .foot__center {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 80px;
+    border-radius: 5px;
+    background: var(--dark-desaturated);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 25px;
+    box-shadow: 1px 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  body.light .foot__center {
+    background: var(--very-gray);
+    box-shadow: 1px 10px 30px var(--very-grayish);
+  }
+
+  footer p {
+    margin-top: 120px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  main.todo {
+    max-width: 100%;
+    margin: 0 15px;
+    padding: 75px 15px 0;
+  }
+}
