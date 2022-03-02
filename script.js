@@ -41,7 +41,7 @@ input.addEventListener("keyup", function (e) {
 function renderTodos(data) {
   const listTodo = data.map(
     (item, index) => `
-         <li class="list-item" data-id="${index}" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+         <li class="list-item" data-id="${index}" draggable="true" >
             <div class="item-check ${item.status == true ? `active` : ``}">
             <div class="inner_circle"></div>
             </div>
