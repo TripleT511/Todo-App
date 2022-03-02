@@ -34,7 +34,13 @@ input.addEventListener("keyup", function (e) {
       status: false,
     });
     input.value = "";
-    renderTodos(todos);
+    if (fill == 1) {
+      renderTodosActive();
+    } else if (fill == 2) {
+      renderTodosComeplete();
+    } else {
+      renderTodos(todos);
+    }
   }
 });
 
