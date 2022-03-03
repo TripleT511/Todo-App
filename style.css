@@ -77,7 +77,6 @@ main.todo {
 
 .todo__header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   margin-bottom: 35px;
 }
@@ -191,7 +190,7 @@ body.light .todo__body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 25px;
+  padding: 20px 25px;
   width: 100%;
   color: var(--grayish);
   background: var(--dark-desaturated);

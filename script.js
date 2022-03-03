@@ -55,7 +55,11 @@ form.addEventListener("click", () => input.focus());
 
 // Add Todo
 input.addEventListener("keyup", function (e) {
-  if (e.key === "Enter" || e.keyCode === 13) {
+  if (
+    (e.key === "Enter" || e.keyCode === 13) &&
+    e.target.value.length != 0 &&
+    e.target.value.trim().length != 0
+  ) {
     todos.push({
       text: e.target.value,
       status: false,
