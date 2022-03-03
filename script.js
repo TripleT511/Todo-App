@@ -130,6 +130,7 @@ function renderTodosActive() {
   listTodo.forEach((item, index) => {
     item.addEventListener("dragstart", (e) => {
       e.target.style.opacity = 1;
+      e.effectAllowed = "move";
       prevItem = listIndex[index];
     });
 
@@ -179,6 +180,7 @@ function renderTodosComeplete() {
   listTodo.forEach((item, index) => {
     item.addEventListener("dragstart", (e) => {
       e.target.style.opacity = 1;
+      e.effectAllowed = "move";
       prevItem = listIndex[index];
     });
 
@@ -206,6 +208,7 @@ function renderTodosAll() {
   listTodo.forEach((item, index) => {
     item.addEventListener("dragstart", (e) => {
       e.target.style.opacity = 1;
+      e.effectAllowed = "move";
       prevItem = index;
     });
 
