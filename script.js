@@ -119,6 +119,9 @@ function deleteToDoComplete() {
   const a = todos.filter((item) => item.status === false);
   todos = a;
   renderTodos(todos);
+  if (fill == 0) {
+    renderTodosAll();
+  }
 }
 
 // Add Active
@@ -268,7 +271,6 @@ function renderTodosAll() {
       renderTodos(todos);
     })
   );
-
   listCheck.forEach((item, index) =>
     item.addEventListener("click", function () {
       completeToDo(index);

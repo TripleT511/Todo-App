@@ -190,7 +190,7 @@ body.light .todo__body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 25px;
+  padding: 19px 25px;
   width: 100%;
   color: var(--grayish);
   background: var(--dark-desaturated);
