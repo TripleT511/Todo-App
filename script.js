@@ -9,10 +9,37 @@ const form = $(".todo__form");
 const clear = $(".clear");
 const footItem = $$(".foot__center p");
 const leftItem = $(".count");
-let todos = [];
+let todos = [
+  {
+    text: "Complete online JavaScript course",
+    status: true,
+  },
+  {
+    text: "Jog around the park 3x",
+    status: false,
+  },
+  {
+    text: "10 minutes meditation",
+    status: false,
+  },
+  {
+    text: "Read for 1 hour",
+    status: false,
+  },
+  {
+    text: "Pick up groceries",
+    status: false,
+  },
+  {
+    text: "Complete Todo App on Frontend Mentor",
+    status: false,
+  },
+];
 let fill = 0;
 let prevItem = null;
 let nextItem = 0;
+
+renderTodos(todos);
 
 // Change Theme
 change.addEventListener("click", changeTheme);
@@ -201,6 +228,11 @@ function renderTodosComeplete() {
 
 // Render Todos All
 function renderTodosAll() {
+  const listIndex = [];
+  const todosComplete = todos.filter((item, index) => {
+    if (item.status == true) listIndex.push(index);
+    return item.status == true;
+  });
   const listDel = $$(".item-delete");
   const listCheck = $$(".item-check");
   const listTodo = $$(".list-item");
@@ -228,7 +260,7 @@ function renderTodosAll() {
 
   listDel.forEach((item, index) =>
     item.addEventListener("click", function () {
-      deleteToDo(index);
+      deleteToDo(listIndex[index]);
       renderTodos(todos);
     })
   );
